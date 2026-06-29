@@ -1,4 +1,13 @@
+/* 1. Google Font Import FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;500;700&display=swap');
+
+/* 2. Tailwind Import SECOND */
 @import "tailwindcss";
+
+/* 3. Register the utility class for v4 */
+@theme {
+  --font-cascadia: "Cascadia Code", monospace;
+}
 
 html , body , #root {
     margin: 0;
