@@ -40,3 +40,4 @@ function Personal({ image, name, role, email, phone, address }) {
 }
 
 export default Personal;
+
