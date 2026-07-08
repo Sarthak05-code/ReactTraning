@@ -1,68 +1,22 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
-import profile from "./assets/ReoMikage.png";
+import { useState } from "react"
 
 function App() {
+  const [counter , Setcounter] = useState(0)
+  
+  
   return (
     <>
-      <Navbar title="My Portfolio" />
+      <div>
+        <h2 className="w-full p-2 bg-green-800 text-center text-white font-bold mb-2">Counter: {counter}</h2>
+        <button className="w-40 bg-blue-400 p-2 rounded-lg ml-1 shadow-lg" onClick={() => Setcounter(counter + 1)} > +1</button>
+        <button className="w-40 bg-red-400 p-2 rounded-lg shadow-lg" onClick={() => Setcounter(counter - 1)}> -1</button>
+      </div>
 
-      <Hero
-        image={profile}
-        name="Sarthak"
-        role="Frontend Learner"
-      />
-
-      <About
-        description="I am learning React and Tailwind CSS."
-      />
-
-      <Skills
-        skills={[
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "React",
-          "Tailwind"
-        ]}
-      />
-
-      <Projects
-        projects={[
-          {
-            id: 1,
-            title: "Calculator",
-            tech: "HTML CSS JavaScript"
-          },
-          {
-            id: 2,
-            title: "Portfolio",
-            tech: "React"
-          },
-          {
-            id: 3,
-            title: "Weather App",
-            tech: "React API"
-          }
-        ]}
-      />
-
-      <Contact
-        email="sarthak@example.com"
-        phone="+977 98XXXXXXXX"
-      />
-
-      <Footer
-        copyright="© 2026 Sarthak"
-      />
+    
     </>
-  );
+  )
+
+
 }
 
-export default App;
+export default App
