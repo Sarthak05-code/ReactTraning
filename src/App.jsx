@@ -1,56 +1,74 @@
 import { useState } from "react";
 
-export default function LoginForm() {
-  const [form, setForm] = useState({ username: "", password: "" });
+export function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const loginData = {
+      username: username,
+      password: password,
+    };
+
+    fetch("https://dummyjson.com/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Data From DummyJson", data);
+        if (data.accessToken) {
+          alert(`Welcome BACK , ${data.firstName}!`);
+        } else {
+          alert(`Login Failed: ` + data.message);
+        }
+      });
   };
-
-  const handleSubmit = () => {
-    if (!form.username.trim() || !form.password.trim()) return;
-    alert(`Login as ${form.username}`);
-    setForm({ username: "", password: "" });
-  };
-
   return (
-    <div className="min-h-screen bg-slate-50 p-6 flex items-center justify-center">
-      <div className="w-full max-w-sm bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-        <h1 className="text-xl font-semibold text-slate-800 mb-1">Log in</h1>
-        <p className="text-sm text-slate-500 mb-4">Enter your credentials to continue</p>
-
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-slate-600 mb-1">Username</label>
-            <input
-              name="username"
-              value={form.username}
-              onChange={handleChange}
-              placeholder="Enter your name..."
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-slate-600 mb-1">Password</label>
-            <input
-              name="password"
-              type="password"
-              value={form.password}
-              onChange={handleChange}
-              placeholder="••••••••"
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400"
-            />
-          </div>
-
-          <button
-            onClick={handleSubmit}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 rounded-lg transition-colors"
-          >
-            Log in
-          </button>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleLogin}
+        className="w-80 rounded-lg bg-white p-6 shadow-md"
+      >
+        <h2 className="mb-4 text-center text-xl font-bold text-gray-800">
+          DummyJSON Login
+        </h2>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold text-gray-600">
+            Username
+          </label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full rounded border border-gray-300 p-2 focus:outline-blue-500"
+            placeholder="Enter name...."
+          ></input>
         </div>
-      </div>
+        <div className="mb-6">
+          <label className="block text-sm font-semibold text-gray-600">
+            Password
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full rounded border border-gray-300 p-2 focus:outline-blue-500"
+            placeholder="Enter your password...."
+          ></input>
+        </div>
+        <button
+          type="submit"
+          className="w-full rounded bg-blue-500 py-2 font-semibold text-white hover:bg-blue-700 "
+        >
+          Sign-In
+        </button>
+      </form>
     </div>
   );
 }
+
+export default App;
