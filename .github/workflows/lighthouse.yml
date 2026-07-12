@@ -4,7 +4,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-      
 
 jobs:
   lighthouse:
@@ -30,8 +29,6 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      # ---> This is the exact step that changed <---
       - name: Run Lighthouse CI
-        run: |
-          pnpm dlx @lhci/cli autorun \
-            --collect.staticDistDir="./dist" \
-            --upload.target="temporary-public-storage"
+        run: pnpm dlx @lhci/cli autorun
