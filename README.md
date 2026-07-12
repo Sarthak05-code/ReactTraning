@@ -1,6 +1,6 @@
 # React Portfolio 🚀
 
-[![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-cicd.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-cicd.yml)
+[![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml)
 [![Lighthouse CI](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml)
 [![CodeQL Security](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
 
