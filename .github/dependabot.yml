@@ -6,11 +6,24 @@ updates:
     schedule:
       interval: "weekly"
 
-    # Only keep one dependency update PR open at a time
     open-pull-requests-limit: 1
+
+    cooldown:
+      default-days: 3
 
     labels:
       - "dependencies"
 
     commit-message:
       prefix: "deps"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+    labels:
+      - "github-actions"
+
+    commit-message:
+      prefix: "ci"
