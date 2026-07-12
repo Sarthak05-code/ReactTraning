@@ -3,28 +3,26 @@ name: React CI
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version : 24
+          cache : "pnpm"
 
-      - name: Enable Corepack (pnpm)
-        run: corepack enable
+      - run : corepack enable
+      - run: corepack prepare pnpm@latest --activate
+      - run : pnpm install --frozen-lockfile
 
-      - name: Prepare pnpm
-        run: corepack prepare pnpm@latest --activate
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build project
-        run: pnpm build
+      - run : pnpm lint
+      - run : pnpm build
+      
