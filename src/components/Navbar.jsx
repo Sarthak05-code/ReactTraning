@@ -18,8 +18,8 @@ export default function Navbar() {
               ></img>
             </div>
             <span className="text-lg sm:text-xl md:text-2xl font-medium">
-              <span className="text-white font-bold">Code</span>
-              <span className="text-blue-500 font-bold">Flow</span>
+              <span className="text-white font-bold">My</span>
+              <span className="text-blue-500 font-bold">Works</span>
             </span>
           </div>
           {/* Nav Links */}
