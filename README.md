@@ -1,66 +1,121 @@
-# React Portfolio 🚀
+# React Portfolio
 
 [![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml)
 [![Lighthouse CI](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml)
-[![CodeQL Security](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
+[![CodeQL](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
 
-A modern, high-performance personal portfolio built with React and heavily automated using enterprise-grade CI/CD and DevOps best practices.
+A personal portfolio built with **React**, **Vite**, and **Tailwind CSS**.
 
-## 🛠️ Tech Stack
-
-- **Frontend:** React, TypeScript, Vite
-- **Package Manager:** pnpm (v10)
-- **Deployment:** GitHub Pages
-- **Code Quality:** ESLint, Lighthouse CI
+The project demonstrates modern frontend development along with automated CI/CD, security scanning, dependency management, and performance auditing using GitHub Actions.
 
 ---
 
-## 🤖 Automated Workflows & CI/CD
+## Live Demo
 
-This repository operates on a fully automated GitOps pipeline to ensure code security, optimal performance, and up-to-date dependencies:
+🌐 https://sarthak05-code.github.io/ReactTraning/
 
-### 1. Build & Deployment (`react-ci.yml`)
-- Triggered on every `push` or `pull_request` to `main`.
-- Runs parallel dependency caching via `pnpm` to maximize action speeds.
-- Automatically handles type-checking, building, and seamless compilation delivery directly to GitHub Pages.
-
-### 2. Quality Control (`lighthouse.yml` & `lighthouserc.json`)
-- Runs Google Lighthouse audits autonomously on incoming pull requests.
-- Measures thresholds across **Performance, Accessibility, Best Practices, and SEO**.
-- Enforces performance budgets to strictly block code that degrades user experience.
-
-### 3. Dependency Management & Autopilot (`dependabot.yml`)
-- Scans for dependency upgrades weekly.
-- Implements a **3-day cooldown matrix** on new library releases to avoid zero-day breaks and buggy updates.
-- Uses automated testing routines to merge verified package upgrades securely without manual click intervention.
-
-### 4. Static Code Security (`codeql.yml`)
-- Executes standard semantic vulnerability parsing.
-- Schedules isolated execution sequences out of critical path loops to minimize daily build queue friction.
+*(Replace this with your custom domain once it's ready.)*
 
 ---
 
-## 🚀 Local Development
+## Features
 
-To run this project locally, ensure you have **Node.js (v24)** and **pnpm (v10)** installed.
+- Responsive design
+- Modern React + Vite setup
+- Tailwind CSS v4
+- Interactive UI components
+- Automatic deployment to GitHub Pages
+- Automated code quality checks
+- Performance audits with Lighthouse CI
+- Security analysis using CodeQL
+- Dependency updates with Dependabot
+- Repository security checks using OpenSSF Scorecards
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Sarthak05-code/ReactTraning.git
-   cd ReactTraning
-   ```
+---
 
-2. **Install dependencies:**
-   ```bash
-   pnpm install --frozen-lockfile
-   ```
+## Tech Stack
 
-3. **Run the development server:**
-   ```bash
-   pnpm dev
-   ```
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- pnpm
+- GitHub Actions
+- GitHub Pages
 
-4. **Build for production:**
-   ```bash
-   pnpm build
-   ```
+---
+
+## Automation
+
+This repository includes several GitHub workflows:
+
+| Workflow | Purpose |
+|----------|---------|
+| React CI/CD | Builds and deploys the application |
+| Lighthouse CI | Checks performance, accessibility, SEO, and best practices |
+| CodeQL | Scans for security issues |
+| Dependabot | Keeps dependencies up to date |
+| OpenSSF Scorecards | Evaluates repository security best practices |
+
+---
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Sarthak05-code/ReactTraning.git
+cd ReactTraning
+```
+
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Start the development server:
+
+```bash
+pnpm dev
+```
+
+Create a production build:
+
+```bash
+pnpm build
+```
+
+---
+
+## Project Structure
+
+```
+.
+├── .github/
+│   └── workflows/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## Roadmap
+
+- [ ] Complete portfolio sections
+- [ ] Add unit tests with Vitest
+- [ ] Add React Testing Library
+- [ ] Connect custom domain
+- [ ] Improve animations and accessibility
+
+---
+
+## License
+
+This project is licensed under the MIT License.
