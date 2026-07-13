@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // 1. Added state to track the active tab
+  const [activeTab, setActiveTab] = useState("App.jsx");
 
   useEffect(() => {
     function handleMouseMove(e) {
@@ -13,11 +15,23 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // 2. Defined the tabs to easily map over them
+  const tabs = ["App.jsx", "Hero.jsx", "Navbar.jsx"];
+
+  // 3. Simple content mapping for the editor body
+  const tabContent = {
+    "App.jsx":
+      "// Main application entry point\nimport Hero from './Hero';\n\nexport default function App() {\n  return <Hero />;\n}",
+    "Hero.jsx":
+      "// Hero component logic goes here\nexport default function Hero() {\n  return <section>...</section>;\n}",
+    "Navbar.jsx":
+      "// Navigation bar component\nexport default function Navbar() {\n  return <nav>Links</nav>;\n}",
+  };
+
   return (
-    // Added bg-gray-950 so the white text/borders show up properly
     <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none" // Added pointer-events-none so it doesn't block interactions
+        className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px , rgba(56,130,246,0.15), transparent 40%)`,
         }}
@@ -35,13 +49,10 @@ export default function Hero() {
         }}
       ></div>
 
-      {/* Added max-w-3xl mx-auto and z-10 for proper sizing and layering */}
       <div className="relative order-2 w-full max-w-3xl mx-auto z-10">
         <div className="relative bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl border border-white/10">
-          
-          {/* Removed the restrictive sm:w-[350px] so it fills the container nicely. Made it a flex column. */}
+          {/* Note: Changed bg-linear-to-br to bg-gradient-to-br for standard Tailwind compatibility */}
           <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-lg overflow-hidden h-[320px] lg:h-[450px] border border-white/5 flex flex-col w-full">
-            
             {/* IDE Header */}
             <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white/5 backdrop-blur-sm border-b border-white/10">
               <div className="flex space-x-4 items-center">
@@ -57,24 +68,33 @@ export default function Hero() {
               <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 cursor-pointer hover:text-white transition-colors" />
             </div>
 
-            {/* File Tabs (Fixed the unstyled buttons) */}
+            {/* File Tabs */}
             <div className="flex overflow-x-auto border-b border-white/5 bg-black/20">
-              <button className="px-4 py-2 text-xs sm:text-sm text-blue-400 bg-white/5 border-t-2 border-t-blue-500 outline-none whitespace-nowrap">
-                App.jsx
-              </button>
-              <button className="px-4 py-2 text-xs sm:text-sm text-gray-400 hover:text-gray-200 hover:bg-white/[0.02] transition-colors outline-none whitespace-nowrap">
-                Hero.jsx
-              </button>
-              <button className="px-4 py-2 text-xs sm:text-sm text-gray-400 hover:text-gray-200 hover:bg-white/[0.02] transition-colors outline-none whitespace-nowrap">
-                Navbar.jsx
-              </button>
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 py-2 text-xs sm:text-sm outline-none whitespace-nowrap transition-colors border-t-2 ${
+                    activeTab === tab
+                      ? "text-blue-400 bg-white/5 border-t-blue-500" // Active styles
+                      : "text-gray-400 hover:text-gray-200 hover:bg-white/[0.02] border-t-transparent" // Inactive styles
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
             </div>
 
-            {/* Empty Editor Body for completeness */}
-            <div className="p-4 flex-1 text-gray-300 font-mono text-sm overflow-y-auto">
-                <span className="text-gray-500 italic"></span>
+            {/* Editor Body */}
+            <div className="p-4 flex-1 text-gray-300 font-mono text-sm overflow-y-auto whitespace-pre-wrap">
+              <span
+                className={
+                  activeTab === "App.jsx" ? "text-blue-300" : "text-gray-400"
+                }
+              >
+                {tabContent[activeTab]}
+              </span>
             </div>
-
           </div>
         </div>
       </div>
