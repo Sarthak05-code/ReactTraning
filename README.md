@@ -19,7 +19,7 @@ A modern, high-performance personal portfolio built with React and heavily autom
 
 This repository operates on a fully automated GitOps pipeline to ensure code security, optimal performance, and up-to-date dependencies:
 
-### 1. Build & Deployment (`react-cicd.yml`)
+### 1. Build & Deployment (`react-ci.yml`)
 - Triggered on every `push` or `pull_request` to `main`.
 - Runs parallel dependency caching via `pnpm` to maximize action speeds.
 - Automatically handles type-checking, building, and seamless compilation delivery directly to GitHub Pages.
