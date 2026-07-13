@@ -1,7 +1,7 @@
 # React Portfolio
 
 [![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml)
-[![Lighthouse CI](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml)
+[![LightHouse CI](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml)
 [![CodeQL](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
 
 A personal portfolio built with **React**, **Vite**, and **Tailwind CSS**.
