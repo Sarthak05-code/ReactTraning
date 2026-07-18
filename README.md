@@ -1,26 +1,24 @@
-# React Portfolio
+# React + Tailwind CSS Project
 
 [![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml)
 [![CodeQL](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
 
-A personal portfolio built with **React**, **Vite**, and **Tailwind CSS**.
+A modern, highly responsive frontend application built with **React**, **Vite**, and **Tailwind CSS**.
 
-The project demonstrates modern frontend development along with automated CI/CD, security scanning, dependency management, and performance auditing using GitHub Actions.
+The project demonstrates modular frontend architecture, robust state management, and automated continuous integration, security scanning, and dependency management using GitHub Actions.
 
 ---
 
 ## Features
 
-- Responsive design
+- Responsive layout and interface
 - Modern React + Vite setup
-- Tailwind CSS v4
-- Interactive UI components
-- Automatic deployment to GitHub Pages
+- Tailwind CSS v4 styling architecture
+- Highly interactive UI and component state management
+- Automatic deployment pipeline to GitHub Pages
 - Automated code quality checks
-- Performance audits with Lighthouse CI
 - Security analysis using CodeQL
-- Dependency updates with Dependabot
-- Repository security checks using OpenSSF Scorecards
+- Automatic dependency updates with Dependabot
 
 ---
 
@@ -38,15 +36,13 @@ The project demonstrates modern frontend development along with automated CI/CD,
 
 ## Automation
 
-This repository includes several GitHub workflows:
+This repository includes automated GitHub workflows to ensure codebase stability and security:
 
-| Workflow           | Purpose                                                    |
-| ------------------ | ---------------------------------------------------------- |
-| React CI/CD        | Builds and deploys the application                         |
-| Lighthouse CI      | Checks performance, accessibility, SEO, and best practices |
-| CodeQL             | Scans for security issues                                  |
-| Dependabot         | Keeps dependencies up to date                              |
-| OpenSSF Scorecards | Evaluates repository security best practices               |
+| Workflow      | Purpose                                                    |
+| ------------- | ---------------------------------------------------------- |
+| React CI/CD   | Validates builds and automatically deploys the application |
+| CodeQL        | Automated vulnerability and security flaw scanning        |
+| Dependabot    | Keeps dependencies securely up to date                    |
 
 ---
 
@@ -99,11 +95,11 @@ pnpm build
 
 ## Roadmap
 
-- [ ] Complete portfolio sections
+- [ ] Implement advanced interactive game mechanics and dashboard layout
 - [ ] Add unit tests with Vitest
-- [ ] Add React Testing Library
-- [ ] Connect custom domain
-- [ ] Improve animations and accessibility
+- [ ] Add React Testing Library configuration
+- [ ] Connect custom domain and hosting setups
+- [ ] Improve transitions, animations, and accessibility guidelines
 
 ---
 
