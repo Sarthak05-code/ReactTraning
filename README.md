@@ -9,14 +9,6 @@ The project demonstrates modern frontend development along with automated CI/CD,
 
 ---
 
-## Live Demo
-
-🌐 https://sarthak05-code.github.io/ReactTraning/
-
-_(Replace this with your custom domain once it's ready.)_
-
----
-
 ## Features
 
 - Responsive design
