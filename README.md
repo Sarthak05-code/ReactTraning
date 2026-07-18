@@ -1,7 +1,6 @@
 # React Portfolio
 
 [![React CI/CD](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/react-ci.yml)
-[![LightHouse CI](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/lighthouse.yml)
 [![CodeQL](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml/badge.svg)](https://github.com/Sarthak05-code/ReactTraning/actions/workflows/codeql.yml)
 
 A personal portfolio built with **React**, **Vite**, and **Tailwind CSS**.
@@ -14,7 +13,7 @@ The project demonstrates modern frontend development along with automated CI/CD,
 
 🌐 https://sarthak05-code.github.io/ReactTraning/
 
-*(Replace this with your custom domain once it's ready.)*
+_(Replace this with your custom domain once it's ready.)_
 
 ---
 
@@ -49,13 +48,13 @@ The project demonstrates modern frontend development along with automated CI/CD,
 
 This repository includes several GitHub workflows:
 
-| Workflow | Purpose |
-|----------|---------|
-| React CI/CD | Builds and deploys the application |
-| Lighthouse CI | Checks performance, accessibility, SEO, and best practices |
-| CodeQL | Scans for security issues |
-| Dependabot | Keeps dependencies up to date |
-| OpenSSF Scorecards | Evaluates repository security best practices |
+| Workflow           | Purpose                                                    |
+| ------------------ | ---------------------------------------------------------- |
+| React CI/CD        | Builds and deploys the application                         |
+| Lighthouse CI      | Checks performance, accessibility, SEO, and best practices |
+| CodeQL             | Scans for security issues                                  |
+| Dependabot         | Keeps dependencies up to date                              |
+| OpenSSF Scorecards | Evaluates repository security best practices               |
 
 ---
 
