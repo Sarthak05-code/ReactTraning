@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function LoginPage() {
   const [data, setData] = useState({
@@ -7,21 +7,25 @@ function LoginPage() {
     password: "",
   });
   const [error, setError] = useState("");
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-    if (error) setError("")
+    if (error) setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
-    
     if (!data.username || !data.password) {
       setError("Please fill in all fields.");
       return;
     }
+
+    setLoading(true);
 
     try {
       const res = await fetch("https://dummyjson.com/auth/login", {
@@ -38,13 +42,15 @@ function LoginPage() {
       if (!res.ok) {
         throw new Error(result.message || "Invalid credentials");
       }
-      if (!error) {
-        navigate("/ReactTraning/dashboard")
-      }
 
-      console.log("Logged in user:", result);
+      localStorage.setItem("token", result.accessToken);
+
+      // Navigate to /dashboard (basename adds /ReactTraning automatically)
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -62,7 +68,6 @@ function LoginPage() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">Username</label>
-
             <input
               type="text"
               name="username"
@@ -75,7 +80,6 @@ function LoginPage() {
 
           <div>
             <label className="block text-sm font-medium mb-1">Password</label>
-
             <input
               type="password"
               name="password"
@@ -88,17 +92,18 @@ function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600 transition"
+            disabled={loading}
+            className="w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600 transition disabled:opacity-50"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-4">
           Don't have an account?{" "}
-          <a href="#" className="text-blue-500 hover:underline">
+          <Link to="/register" className="text-blue-500 hover:underline">
             Register here
-          </a>
+          </Link>
         </p>
       </div>
     </div>
