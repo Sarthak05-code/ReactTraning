@@ -1,21 +1,13 @@
-name: Deploy Astro to GitHub Pages
+name: Astro CI
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  build:
+  check-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,12 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check Astro project
+        run: npx astro check
+
       - name: Build Astro project
         run: npm run build
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
- 
