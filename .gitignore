@@ -1,0 +1,43 @@
+# Build output
+dist/
+
+
+# Astro generated types & cache
+.astro/
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Tailwind / PostCSS / Vite caches
+.vite/
+.cache/
+
+# OS / Editor specific files
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDEs & Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Testing / Playwright / Cypress (if added later)
+/coverage
+/test-results
