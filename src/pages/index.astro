@@ -1,6 +1,7 @@
 ---
 // src/pages/index.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Counter from "../components/Counter";
 
 const title = "My First Astro App";
 const message = "Astro + Tailwind CSS is working!";
@@ -13,7 +14,8 @@ const message = "Astro + Tailwind CSS is working!";
         <p class="text-xl text-slate-300">{message}</p>
 
         <button class="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-white transition hover:bg-cyan-600">
-            Click Me
+            Click Me 
         </button>
+        <Counter client:load />
     </main>
 </BaseLayout>
